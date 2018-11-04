@@ -1,0 +1,30 @@
+﻿@model hw14.Models.TextViewModel
+
+@{
+    ViewBag.Title = "EnterText";
+}
+
+<div class="container">
+    <h1 class="text-center">
+        Lets do it.
+    </h1>
+    <h3 class="text-center">
+        Just enter text.
+    </h3>
+    <h5>
+        @using (Html.BeginForm())
+        {
+            @Html.TextBoxFor(m => m.UserText);
+            <input class="btn btn-primary" type="submit" name="Ok" value="Ok" />
+        }
+    </h5>
+    <br />
+    @foreach (var item in ViewBag.SeparetedText)
+    {
+        @item
+    }
+    <br />
+    @Html.ActionLink("I want to stop", "Info", "info")
+</div>
+
+
